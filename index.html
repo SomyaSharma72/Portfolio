@@ -4,6 +4,7 @@
 <head>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
@@ -14,9 +15,9 @@
         <nav class="nav">
             <h1 id="logo">Portfolio</h1>
             <div class="links">
-                <a class="inlinks" href="Projects">Projects</a>
-                <a class="inlinks" href="About">About</a>
-                <a class="inlinks" href="Linktree">Linktree</a>
+                <a class="inlinks" href="#">Projects</a>
+                <a class="inlinks" href="#">About</a>
+                <a class="inlinks" href="#">Linktree</a>
 
             </div>
         </nav>
@@ -26,146 +27,221 @@
             <div>
                 <img src="profilepic.png" alt="profilepic">
             </div>
-            
+
             <div>
                 <h1 id="hi"> Hi, I'm Somya </h1>
                 <h2>Frontend Developer | Backend | DSA</h2>
             </div>
         </div>
 
-        <div class="cont1">
-            <button class="button">Download Resume</button>
+        <<div class="cont1">
+            <a href="resume.pdf" download>
+                <button class="button">Download Resume</button>
+            </a>
             <button id="hire" class="button">Hire Me</button>
-        </div>
-        <div class="down-arrow"></div>
+            </div>
+            <div class="down-arrow"></div>
 
-        <div class="container">
-            <h2 id="project">PROJECTS</h2>
-            <div class="projects">
-                <div><video class="video1" src="nikeproject.mp4" autoplay muted loop playsinline ></video></div>
-                <div class="desc1">
-                    <div id="productintro">
-                        <h1>Nike Shoe Card</h1>
-                    </div>
-                    <div>
-                        <p>This Nike landing card highlights a featured sneaker with sharp layout, clean typography, and
-                            CTA-ready design — crafted to look great on any device.</p>
+            <div class="container">
+                <h2 id="project">PROJECTS</h2>
+
+
+                <div class="projects">
+                    <div><video class="video1" src="profshop.mp4" autoplay muted loop playsinline></video></div>
+                    <div class="desc1">
+                        <div id="productintro">
+                            <h1>Camera Shop Landing Page</h1>
+                        </div>
+                        <div>
+                            <p>Developed a responsive e-commerce front-end for a camera store, optimized for various
+                                screen
+                                sizes. Includes structured product sections, modern layout, and clean styling using
+                                Bootstrap.</p>
+                            <a href="https://somyasharma72.github.io/PROF-SHOP1/" target="_blank" id="project-link">
+                                Live Demo
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="projects1">
-
-                <div class="desc1">
-                    <div id="productintro">
-                        <h1>Nike Shoe Card</h1>
+                <div class="projects reverse">
+                    <div class="desc1">
+                        <div id="productintro">
+                            <h1>Spotify Web UI Clone</h1>
+                        </div>
+                        <div>
+                            <p>A responsive front-end clone of the Spotify desktop UI, built using HTML and CSS.
+                                Features
+                                custom styling, modern layout, and a functional song card design to simulate a streaming
+                                interface.</p>
+                            <a href="https://somyasharma72.github.io/SPOTIFY-CLONE/" target="_blank"
+                                id="project-link">Live
+                                Demo</a>
+                        </div>
                     </div>
-                    <div>
-                        <p>This Nike landing card highlights a featured sneaker with sharp layout, clean typography, and
-                            CTA-ready design — crafted to look great on any device.</p>
+                    <div><video class="video1" src="spotify.mp4" autoplay muted loop playsinline></video></div>
+                </div>
+
+                <div class="projects">
+                    <div><video class="video1" src="portfolio.mp4" autoplay muted loop playsinline></video></div>
+                    <div class="desc1">
+                        <div id="productintro">
+                            <h1>Personal Portfolio Website</h1>
+                        </div>
+                        <div>
+                            <p>Designed and developed a personal portfolio to showcase my web development projects,
+                                skills,
+                                and contact details. Built using HTML and CSS with a responsive layout and interactive
+                                sections.</p>
+                            <a href="https://somyasharma72.github.io/Portfolio/" target="_blank" id="project-link">Live
+                                Demo</a>
+                        </div>
                     </div>
                 </div>
-                <div><video class="video1" src="quillproject.mp4" autoplay muted loop playsinline></video></div>
-            </div>
 
-            <div>
+                <div class="projects reverse">
+                    <div class="desc1">
+                        <div id="productintro">
+                            <h1>Nike Shoe Card</h1>
+                        </div>
+                        <div>
+                            <p>This Nike landing card highlights a featured sneaker with sharp layout, clean typography,
+                                and
+                                CTA-ready design — crafted to look great on any device.</p>
+
+
+                        </div>
+                    </div>
+                    <div><video class="video1" src="nikeproject.mp4" autoplay muted loop playsinline></video></div>
+                </div>
+
+                <div class="projects">
+                    <div><video class="video1" src="quillproject.mp4" autoplay muted loop playsinline></video></div>
+                    <div class="desc1">
+                        <div id="productintro">
+                            <h1>Quill Blog Editor Project</h1>
+                        </div>
+                        <div>
+                            <p>A rich-text editor interface using the Quill.js library. This project focuses on
+                                user-friendly formatting options, clean toolbar interaction, and responsive editing
+                                experience.</p>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
                 <div>
-                    <h1>TECH-STACKS PROGRESS</h1>
-                    <div class="range">
-                        <input type="range" id="range" min="0" max="100" value="13" disabled>
+                    <div>
+                        <h1>TECH-STACKS PROGRESS</h1>
+                        <div class="range">
+                            <input type="range" id="range" min="0" max="100" value="13" disabled>
+                        </div>
+                        <div class="techstacks">
+                            <p>Frontend</p>
+                            <p>Backend</p>
+                            <p>Data Strucutures</p>
+                            <p>Algorithms</p>
+                        </div>
+
                     </div>
-                    <div class="techstacks">
-                        <p>Frontend</p>
-                        <p>Backend</p>
-                        <p>Data Strucutures</p>
-                        <p>Algorithms</p>
+                    <h1>ABOUT ME </h1>
+                    <p>Hey! I'm a passionate and curious full-stack web developer with a strong interest in building
+                        clean,
+                        responsive, and user-friendly websites. I love turning ideas into real-life products using
+                        technologies like HTML, CSS, JavaScript, and modern frameworks like React and Node.js.
+                        Currently,
+                        I'm expanding my skills and working on exciting personal projects to sharpen my craft. I'm
+                        always up
+                        for a challenge and love learning new things — especially when it comes to tech, design, or
+                        gaming.
+                    </p>
+
+                </div>
+                <h1>Skills Acquired</h1>
+                <div class="skills">
+                    <img id="icon1" class="icons" src="./icons/html-5.png"
+                        alt="HTML5 logo, orange shield with white HTML letters, representing web markup language">
+                    <img id="icon2" class="icons" src="./icons/css-3.png"
+                        alt="CSS3 logo, blue shield with white CSS letters, representing web styling language">
+                    <img id="icon3" class="icons" src="./icons/js.png"
+                        alt="JavaScript logo, yellow square with JS letters, representing programming language for web development">
+                    <img id="icon4" class="icons" src="./icons/Tailwind CSS.png"
+                        alt="Tailwind CSS logo, stylized blue-green wave, representing utility-first CSS framework">
+                    <img id="icon5" class="icons" src="./icons/library.png"
+                        alt="Library icon, stack of books symbolizing programming libraries or frameworks, neutral background">
+                    <img id="icon6" class="icons" src="./icons/nodejs.png"
+                        alt="Node.js logo, green hexagon with Node.js text, representing JavaScript runtime environment">
+                    <img id="icon7" class="icons" src="./icons/Express.png"
+                        alt="Express logo, stylized text Express, representing Node.js web application framework">
+                    <img id="icon8" class="icons" src="./icons/MongoDB.png"
+                        alt="Database storage icon, stacked disks symbolizing data storage, neutral background">
+                    <img id="icon9" class="icons" src="./icons/hierarchical-structure.png"
+                        alt="Hierarchical structure icon, tree diagram symbolizing data organization, neutral background">
+                    <img id="icon10" class="icons" src="./icons/icons8-plus-480.png"
+                        alt="Plus icon, white plus sign in a circle, representing addition or more options, neutral background">
+
+                    <div class="container2" id="hover1">
+                        <img src="icons/tick.png" alt="tick.png" class="tick">
+                        <p class="text2">Achievement Unlocked</p>
                     </div>
 
-                </div>
-                <h1>ABOUT ME </h1>
-                <p>Hey! I'm a passionate and curious full-stack web developer with a strong interest in building clean,
-                    responsive, and user-friendly websites. I love turning ideas into real-life products using
-                    technologies like HTML, CSS, JavaScript, and modern frameworks like React and Node.js. Currently,
-                    I'm expanding my skills and working on exciting personal projects to sharpen my craft. I'm always up
-                    for a challenge and love learning new things — especially when it comes to tech, design, or gaming.
-                </p>
+                    <div class="container2" id="hover2">
+                        <img src="icons/tick.png" alt="tick.png" class="tick">
+                        <p class="text2">Achievement Unlocked</p>
+                    </div>
 
-            </div>
-            <h1>Skills Acquired</h1>
-            <div class="skills">
-                <img id="icon1" class="icons" src="./icons/html-5.png"
-                     alt="HTML5 logo, orange shield with white HTML letters, representing web markup language">
-                <img id="icon2" class="icons" src="./icons/css-3.png"
-                    alt="CSS3 logo, blue shield with white CSS letters, representing web styling language">
-                <img id="icon3" class="icons" src="./icons/js.png"alt="JavaScript logo, yellow square with JS letters, representing programming language for web development">
-                <img id="icon4" class="icons" src="./icons/Tailwind CSS.png"alt="Tailwind CSS logo, stylized blue-green wave, representing utility-first CSS framework">
-                <img id="icon5" class="icons" src="./icons/library.png"alt="Library icon, stack of books symbolizing programming libraries or frameworks, neutral background">
-                <img id="icon6" class="icons" src="./icons/nodejs.png"alt="Node.js logo, green hexagon with Node.js text, representing JavaScript runtime environment">
-                <img id="icon7" class="icons" src="./icons/Express.png"alt="Express logo, stylized text Express, representing Node.js web application framework">
-                <img id="icon8" class="icons" src="./icons/MongoDB.png"alt="Database storage icon, stacked disks symbolizing data storage, neutral background">
-                <img id="icon9" class="icons" src="./icons/hierarchical-structure.png"alt="Hierarchical structure icon, tree diagram symbolizing data organization, neutral background">
-                <img id="icon10" class="icons" src="./icons/icons8-plus-480.png"alt="Plus icon, white plus sign in a circle, representing addition or more options, neutral background">
+                    <div class="container2" id="hover3">
+                        <img src="icons/clock.png" alt="tick.png" class="lock">
+                        <p class="text2">Under Progress</p>
+                    </div>
 
-                <div class="container2" id="hover1">
-                    <img src="icons/tick.png" alt="tick.png" class="tick">
-                    <p class="text2">Achievement Unlocked</p>
-                </div>
+                    <div class="container2" id="hover4">
+                        <img src="icons/lock.png" alt="tick.png" class="lock">
+                        <p class="text2">Achievement locked</p>
+                    </div>
 
-                <div class="container2" id="hover2">
-                    <img src="icons/tick.png" alt="tick.png" class="tick">
-                    <p class="text2">Achievement Unlocked</p>
-                </div>
+                    <div class="container2" id="hover5">
+                        <img src="icons/lock.png" alt="tick.png" class="lock">
+                        <p class="text2">Achievement locked</p>
+                    </div>
 
-                <div class="container2" id="hover3">
-                    <img src="icons/clock.png" alt="tick.png" class="lock">
-                    <p class="text2">Under Progress</p>
-                </div>
+                    <div class="container2" id="hover6">
+                        <img src="icons/lock.png" alt="tick.png" class="lock">
+                        <p class="text2">Achievement locked</p>
+                    </div>
 
-                <div class="container2" id="hover4">
-                    <img src="icons/lock.png" alt="tick.png" class="lock">
-                    <p class="text2">Achievement locked</p>
-                </div>
+                    <div class="container2" id="hover7">
+                        <img src="icons/lock.png" alt="tick.png" class="lock">
+                        <p class="text2">Achievement locked</p>
+                    </div>
+                    <div class="container2" id="hover8">
+                        <img src="icons/lock.png" alt="tick.png" class="lock">
+                        <p class="text2">Achievement locked</p>
+                    </div>
+                    <div class="container2" id="hover9">
+                        <img src="icons/lock.png" alt="tick.png" class="lock">
+                        <p class="text2">Achievement locked</p>
+                    </div>
 
-                <div class="container2" id="hover5">
-                    <img src="icons/lock.png" alt="tick.png" class="lock">
-                    <p class="text2">Achievement locked</p>
-                </div>
-
-                <div class="container2" id="hover6">
-                    <img src="icons/lock.png" alt="tick.png" class="lock">
-                    <p class="text2">Achievement locked</p>
-                </div>
-
-                <div class="container2" id="hover7">
-                    <img src="icons/lock.png" alt="tick.png" class="lock">
-                    <p class="text2">Achievement locked</p>
-                </div>
-                <div class="container2" id="hover8">
-                    <img src="icons/lock.png" alt="tick.png" class="lock">
-                    <p class="text2">Achievement locked</p>
-                </div>
-                <div class="container2" id="hover9">
-                    <img src="icons/lock.png" alt="tick.png" class="lock">
-                    <p class="text2">Achievement locked</p>
-                </div>
-
-                <div class="container2" id="hover10">
-                    <p class="text2">Many more to come</p>
+                    <div class="container2" id="hover10">
+                        <p class="text2">Many more to come</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="contact">
-            <h2>Contact Me 📞📧</h2>
-            <div class="contact-info">
-                <p  id="Email">
-                Email: <a href="mailto:devbysomya@example.com">devbysomya@example.com</a>
-            </p>
-            <p  id="linkedin">
-                LinkedIn: <a href="https://www.linkedin.com/in/somyasharma52/" target="_blank">Somya Sharma</a>
-            </p>
+            <div class="contact">
+                <h2>Contact Me 📞📧</h2>
+                <div class="contact-info">
+                    <p id="Email">
+                        Email: <a href="mailto:devbysomya@example.com">devbysomya@example.com</a>
+                    </p>
+                    <p id="linkedin">
+                        LinkedIn: <a href="https://www.linkedin.com/in/somyasharma52/" target="_blank">Somya Sharma</a>
+                    </p>
+                </div>
             </div>
-        </div>
-        
+
 
 
 
