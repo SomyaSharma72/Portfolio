@@ -1119,14 +1119,14 @@
                     </div>
                 </div>
             </div>
-            <form class="contact-form" action="https://formspree.io/f/xanbvrjg" method="post">
+            <form id="contact-form">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="from_name">Name</label>
+                    <input type="text" id="from_name" name="from_name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="from_email">Email</label>
+                    <input type="email" id="from_email" name="from_email" required>
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject</label>
@@ -1265,29 +1265,38 @@
                 });
             });
 
-            // Form submission handling
-            const contactForm = document.querySelector('.contact-form');
+            // EmailJS init
+            emailjs.init("rIgrwFYMJn3lwL_8q"); // Your EmailJS Public Key
+
+            const contactForm = document.getElementById("contact-form");
+
             if (contactForm) {
-                contactForm.addEventListener('submit', function (e) {
+                contactForm.addEventListener("submit", function (e) {
                     e.preventDefault();
 
-                    // Simple form validation
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const subject = document.getElementById('subject').value;
-                    const message = document.getElementById('message').value;
+                    // Simple validation
+                    const name = document.getElementById("from_name").value;
+                    const email = document.getElementById("from_email").value;
+                    const subject = document.getElementById("subject").value;
+                    const message = document.getElementById("message").value;
 
                     if (!name || !email || !subject || !message) {
-                        alert('Please fill in all fields');
+                        alert("Please fill in all fields");
                         return;
                     }
 
-                    // Form submission logic would go here
-                    alert('Message sent successfully!');
-                    contactForm.reset();
+                    // Send using EmailJS
+                    emailjs.sendForm("service_hwdsigl", "template_9xzj3ej", this)
+                        .then(function () {
+                            alert("Message sent successfully!");
+                            contactForm.reset();
+                        }, function (error) {
+                            alert("Failed to send message: " + JSON.stringify(error));
+                        });
                 });
             }
-        });
+
+        }); // <--- THIS closes the DOMContentLoaded
     </script>
 </body>
 
