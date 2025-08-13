@@ -23,6 +23,7 @@
             --darker: #020617;
             --light: #f8fafc;
             --gray: #94a3b8;
+            --nav-height: 80px;
         }
 
         body {
@@ -40,13 +41,14 @@
             position: fixed;
             width: 100%;
             padding: 1.5rem 5%;
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            height: var(--nav-height);
         }
 
         .logo {
@@ -104,17 +106,18 @@
             position: fixed;
             top: 0;
             right: -100%;
-            width: 70%;
+            width: 80%;
+            max-width: 300px;
             height: 100vh;
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(15, 23, 42, 0.98);
             backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
             padding: 6rem 2rem;
-            gap: 2rem;
-            transition: right 0.4s ease-in-out;
+            gap: 2.5rem;
+            transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             z-index: 999;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
         }
 
         .mobile-menu.active {
@@ -124,14 +127,21 @@
         .mobile-menu a {
             color: var(--light);
             text-decoration: none;
-            font-size: 1.2rem;
-            padding: 0.8rem 1rem;
+            font-size: 1.3rem;
+            padding: 1rem;
             border-radius: 8px;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-left: 3px solid transparent;
         }
 
-        .mobile-menu a:hover {
-            background: rgba(92, 107, 255, 0.1);
+        .mobile-menu a:hover, 
+        .mobile-menu a:focus {
+            background: rgba(92, 107, 255, 0.15);
+            border-left: 3px solid var(--primary);
+            padding-left: 1.5rem;
         }
 
         .overlay {
@@ -141,12 +151,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 998;
+            transition: opacity 0.3s ease;
         }
 
         .overlay.active {
             display: block;
+            animation: fadeIn 0.3s ease;
         }
 
         /* Hero Section */
@@ -155,7 +167,7 @@
             display: flex;
             align-items: center;
             padding: 0 5%;
-            padding-top: 5rem;
+            padding-top: calc(var(--nav-height) + 2rem);
         }
 
         .hero-content {
@@ -301,7 +313,7 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .project-card {
@@ -310,6 +322,9 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-card:hover {
@@ -319,12 +334,15 @@
 
         .project-video {
             width: 100%;
-            height: 300px;
+            height: 280px;
             object-fit: cover;
         }
 
         .project-content {
             padding: clamp(1.5rem, 2vw, 2rem);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-content h3 {
@@ -337,6 +355,7 @@
             margin-bottom: 1.5rem;
             line-height: 1.6;
             font-size: clamp(0.9rem, 1.5vw, 1rem);
+            flex-grow: 1;
         }
 
         .project-link {
@@ -348,6 +367,7 @@
             font-weight: 600;
             transition: all 0.3s;
             font-size: clamp(0.9rem, 1.5vw, 1rem);
+            margin-top: auto;
         }
 
         .project-link:hover {
@@ -455,7 +475,7 @@
         .badge {
             background: rgba(92, 107, 255, 0.1);
             border: 1px solid rgba(92, 107, 255, 0.3);
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 50px;
             display: flex;
             align-items: center;
@@ -488,12 +508,12 @@
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .contact-icon {
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 50%;
             display: flex;
@@ -522,7 +542,7 @@
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.8rem;
         }
 
         .form-group {
@@ -538,10 +558,10 @@
 
         .form-group input,
         .form-group textarea {
-            padding: 0.8rem 1.2rem;
+            padding: 1rem 1.5rem;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            border-radius: 12px;
             color: var(--light);
             font-family: 'Poppins', sans-serif;
             transition: all 0.3s;
@@ -563,7 +583,7 @@
         /* Footer */
         footer {
             background: rgba(15, 23, 42, 0.7);
-            padding: 2rem 0;
+            padding: 2.5rem 0;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -580,8 +600,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.05);
             color: var(--light);
@@ -663,7 +683,13 @@
             }
 
             .projects-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                padding-top: calc(var(--nav-height) + 1.5rem);
             }
         }
 
@@ -677,11 +703,11 @@
             }
 
             .hero {
-                padding-top: 4rem;
+                padding-top: calc(var(--nav-height) + 1rem);
             }
 
             .section {
-                padding: 3rem 5%;
+                padding: 3.5rem 5%;
             }
 
             .project-video {
@@ -691,16 +717,24 @@
             .about-badges {
                 justify-content: flex-start;
             }
+            
+            .mobile-menu {
+                width: 85%;
+                max-width: 300px;
+                padding: 7rem 1.5rem;
+            }
         }
 
         @media (max-width: 576px) {
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
             }
 
             .hero-buttons .btn {
                 width: 100%;
+                max-width: 300px;
                 justify-content: center;
             }
 
@@ -719,27 +753,84 @@
 
             .contact-container {
                 padding: 1.5rem;
+                gap: 2rem;
             }
 
             .contact-item {
-                flex-direction: column;
-                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-video {
+                height: 220px;
             }
         }
 
         @media (max-width: 480px) {
+            :root {
+                --nav-height: 70px;
+            }
+            
+            nav {
+                padding: 1rem 5%;
+            }
+            
             .profile-container {
                 width: 220px;
                 height: 220px;
             }
 
             .hero {
-                padding-top: 3rem;
+                padding-top: calc(var(--nav-height) + 0.5rem);
             }
-
+            
+            .hero-text h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.3rem;
+            }
+            
+            .mobile-menu {
+                width: 90%;
+                max-width: 300px;
+                padding: 6rem 1.2rem;
+                gap: 2rem;
+            }
+            
+            .mobile-menu a {
+                font-size: 1.1rem;
+                padding: 0.9rem;
+            }
+            
             .badge {
                 width: 100%;
                 justify-content: center;
+                padding: 0.7rem 1rem;
+            }
+            
+            .form-group input,
+            .form-group textarea {
+                padding: 0.9rem 1.2rem;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons .btn {
+                font-size: 0.95rem;
+                padding: 0.8rem 1.5rem;
+            }
+            
+            .project-content h3 {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -756,18 +847,18 @@
             <a href="#contact">Contact</a>
             <a href="https://linktr.ee/somyasharma72" target="_blank">Linktree</a>
         </div>
-        <button class="menu-toggle">
+        <button class="menu-toggle" aria-label="Toggle menu">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="https://linktr.ee/somyasharma72" target="_blank">Linktree</a>
+        <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+        <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <a href="https://linktr.ee/somyasharma72" target="_blank"><i class="fas fa-link"></i> Linktree</a>
     </div>
     <div class="overlay"></div>
 
@@ -783,7 +874,7 @@
                         <i class="fas fa-download"></i> Download Resume
                     </a>
                     <a href="#contact" class="btn btn-secondary">
-                        Hire Me
+                        <i class="fas fa-handshake"></i> Hire Me
                     </a>
                 </div>
             </div>
@@ -843,6 +934,9 @@
                     <h3>Nike Shoe Card</h3>
                     <p>This Nike landing card highlights a featured sneaker with sharp layout, clean typography, and
                         CTA-ready design — crafted to look great on any device.</p>
+                    <a href="#" class="project-link">
+                        View Project <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
             <div class="project-card">
@@ -851,6 +945,9 @@
                     <h3>Quill Blog Editor Project</h3>
                     <p>A rich-text editor interface using the Quill.js library. This project focuses on user-friendly
                         formatting options, clean toolbar interaction, and responsive editing experience.</p>
+                    <a href="#" class="project-link">
+                        View Project <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1002,6 +1099,15 @@
                         <a href="https://www.linkedin.com/in/somyasharma52/" target="_blank">Somya Sharma</a>
                     </div>
                 </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/somyasharma72" target="_blank">somyasharma72</a>
+                    </div>
+                </div>
             </div>
             <form class="contact-form">
                 <div class="form-group">
@@ -1028,10 +1134,10 @@
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/somyasharma72" target="_blank"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/somyaxsharma128/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/somyasharma52/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <p class="copyright">© 2023 Somya Sharma. All rights reserved.</p>
     </footer>
@@ -1067,12 +1173,27 @@
                 mobileMenu.classList.toggle('active');
                 overlay.classList.toggle('active');
                 document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+                
+                // Toggle menu icon
+                const icon = menuToggle.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
 
             overlay.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
                 overlay.classList.remove('active');
                 document.body.style.overflow = '';
+                
+                // Reset menu icon
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             });
 
             // Close menu when clicking on links
@@ -1082,6 +1203,11 @@
                     mobileMenu.classList.remove('active');
                     overlay.classList.remove('active');
                     document.body.style.overflow = '';
+                    
+                    // Reset menu icon
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
                 });
             });
 
@@ -1112,9 +1238,44 @@
                             top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
+                        
+                        // Close mobile menu if open
+                        if (mobileMenu.classList.contains('active')) {
+                            mobileMenu.classList.remove('active');
+                            overlay.classList.remove('active');
+                            document.body.style.overflow = '';
+                            
+                            // Reset menu icon
+                            const icon = menuToggle.querySelector('i');
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
                     }
                 });
             });
+            
+            // Form submission handling
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple form validation
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    if (!name || !email || !subject || !message) {
+                        alert('Please fill in all fields');
+                        return;
+                    }
+                    
+                    // Form submission logic would go here
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                });
+            }
         });
     </script>
 </body>
